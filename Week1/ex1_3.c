@@ -12,10 +12,12 @@ int main() {
         studentgrade[i] = -1;
     }
     while (running != 0) {
+        // running until user stops
         int num = student(studentamt);
         if (num == 0) {
             running = 0;
         }
+            // checking validity of input
         else if (num >= 1 && num <= studentamt) {
             int valid = 0;
             while (!valid) {
@@ -38,6 +40,7 @@ int main() {
         }
 
         }
+    // printing 
     printf("%5s","Student");
     printf("%10s","Grade");
     for (int i = 0; i<studentamt;i++) {
