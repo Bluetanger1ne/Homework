@@ -20,6 +20,7 @@ int main(void) {
         printf("Do you want to travel by \n 1) Bus ($%.2f)\n 2) Taxi ($%.2f)\n",buscost,taxicost);
         select = choice();
         switch (select) {
+
             case 1:
                 if (your_money >= buscost) {
                     printf("You chose bus.\n");

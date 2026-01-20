@@ -18,6 +18,7 @@ int main(void) {
     float income_lim = incomelim();
     float extra_tax = extratax();
 
+
     for (int i = 0; i < ARRAY_LENGTH; i++) {
         printf("Please enter your income for month %d: ", i + 1);
         scanf("%f", &value);
