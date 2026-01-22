@@ -12,7 +12,7 @@ int main() {
     int student_grade[student_amt];
     for (int i = 0; i < student_amt; i++) {
         student_grade[i] = -1;
-    }
+    } // checking validity
     while (running != 0) {
         int num = student(student_amt);
         if (num == 0) {
@@ -34,7 +34,7 @@ int main() {
         } else {
             printf("Invalid student number! \n");
         }
-    }
+    } // printing results
     printf("%5s", "Student");
     printf("%10s", "Grade");
     for (int i = 0; i < student_amt; i++) {
