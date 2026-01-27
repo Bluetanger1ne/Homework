@@ -33,9 +33,9 @@ int read_integer() {
             ispositive = 0;
         }
         else {
-            while (getchar() != '\n') {
-                printf("invalid input\n");
-            }
+            while (getchar() != '\n');
+            printf("invalid input\n");
+
             ispositive = 1;
         }
     }
