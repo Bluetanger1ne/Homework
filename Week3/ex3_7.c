@@ -3,7 +3,6 @@
 
 bool read_positive(int *value);
 
-
 int main() {
     int number = 0;
     int running = 1;
