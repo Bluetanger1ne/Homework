@@ -35,7 +35,6 @@ int read_integer() {
         else {
             while (getchar() != '\n');
             printf("invalid input\n");
-
             ispositive = 1;
         }
     }
