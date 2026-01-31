@@ -41,3 +41,4 @@ int d10() {
     printf("You rolled a %d! \n", d10roll);
     return 0;
 }
+
