@@ -42,7 +42,7 @@ int replace_char(char *str, const char *repl) {
 
     for (int i = 0; str[i] != '\0'; i++) {
         // Check through the array, without knowing the size. Stop when 0 is reached.
-        if (str[i] == being_replaced || str[i] == being_replaced - 32) {
+        if (str[i] == being_replaced || str[i] == being_replaced - 32 || str[i] == being_replaced + 32) {
             /*Check if the character at the given index contains
             the letter we wish to replace ( Either capital or lower-case)*/
             str[i] = replaced_with;
