@@ -39,17 +39,17 @@ int main() {
     fclose(my_file);
 
     if (found_file == 1) {
-        // Convert all characters to uppercase
+        // Convert all characters to uppercase.
         for (int i = 0; i < row; i++) {
             for (int j = 0; contents[i][j] != '\0'; j++) {
                 contents[i][j] = toupper(contents[i][j]);
             }
         }
 
-        // Open file for writing
+        // Open file for writing.
         my_file = fopen(filename, "w");
 
-        // Write converted content back
+        // Put all the changed characters back into the file.
         for (int i = 0; i < row; i++) {
             fputs(contents[i], my_file);
         }
