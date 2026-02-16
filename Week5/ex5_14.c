@@ -10,6 +10,7 @@ int main() {
     FILE *my_file;
     char contents[MAX_AMT_LINES][MAX_LINE_SIZE];
     int row = 0;
+    int found_file = 1;
 
     printf("Please enter the name of a file you wish to open, with \".txt\" included.\n");
     fgets(filename, MAX_LINE_SIZE, stdin);
@@ -23,6 +24,7 @@ int main() {
         // Checking if the file can be opened or if it exists and displaying an error message
         char error[MAX_LINE_SIZE] = "File not found: ";
         fprintf(stderr, "%s%s\n", error, filename);
+        found_file = 0;
     } else {
         //printf("File found!\n");
         //printf("It contains the following:\n");
@@ -50,7 +52,9 @@ int main() {
     }
     fclose(my_file);
 
-    printf("File processed!\n");
+    if (found_file == 1) {
+        printf("File processed!\n");
+    }
 
     return 0;
 }
