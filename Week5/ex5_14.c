@@ -38,21 +38,24 @@ int main() {
 
     fclose(my_file);
 
-    // Convert all characters to uppercase.
-    for (int i = 0; i < row; i++) {
-        for (int j = 0; contents[i][j] != '\0'; j++) {
-            contents[i][j] = toupper(contents[i][j]);
-        }
-    }
-    // After reading, and closing the file, open the file in writing mode.
-    my_file = fopen(filename, "w");
-    // Add all the converted letters to the original file.
-    for (int i = 0; i < row; i++) {
-        fputs(contents[i], my_file);
-    }
-    fclose(my_file);
-
     if (found_file == 1) {
+        // Convert all characters to uppercase
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; contents[i][j] != '\0'; j++) {
+                contents[i][j] = toupper(contents[i][j]);
+            }
+        }
+
+        // Open file for writing
+        my_file = fopen(filename, "w");
+
+        // Write converted content back
+        for (int i = 0; i < row; i++) {
+            fputs(contents[i], my_file);
+        }
+
+        fclose(my_file);
+
         printf("File processed!\n");
     }
 
