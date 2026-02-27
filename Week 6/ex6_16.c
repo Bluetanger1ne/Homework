@@ -39,22 +39,22 @@ int main() {
 
         }
         nnode * pn = head;
-        int count1 = 0;
+        //int count1 = 0;
         while (pn != NULL) {
             printf("%d\n",pn->number);
             pn=pn->next;
-            count1++;
+            //count1++;
         }
 
-        int count2 = 0;
+        //int count2 = 0;
         pn = head;
         while (pn != NULL) {
             head = pn->next;
             free(pn);
-            count2++;
+            //count2++;
             pn=head;
     }
-    printf("Numbers added:%d\nNumbers deleted: %d",count1,count2);
+    //printf("Numbers added:%d\nNumbers deleted: %d",count1,count2);
 
     return 0;
 
