@@ -58,17 +58,18 @@ int main() {
             printf("Would you like to sort the menu by price or by name?\n1) By price \n2) By name\n"); // Ask for input
             fgets(&value,MAX_SIZE,stdin);
             if (sscanf(&value, "%d", &number) == 1 && number <= 2) {
-                if (number == 1) { // if choice was 1, sort by price
+                if (number == 1) {
+                    // if choice was 1, sort by price
                     qsort(items, row, sizeof(menu_item), sort_price);
                     running = false; // exit loop
-                } else if (number == 2) { // if choice was 2, sort by name
+                } else if (number == 2) {
+                    // if choice was 2, sort by name
                     qsort(items, row, sizeof(menu_item), sort_by_name);
                     running = false; // exit loop
                 }
-            }else {
+            } else {
                 printf("Invalid selection\n");
             }
-
         }
         fclose(my_file);
         for (int i = 0; i < row; i++) {
