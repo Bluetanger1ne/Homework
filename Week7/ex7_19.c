@@ -7,7 +7,7 @@
 #define MAX_SIZE 20
 
 
-typedef struct menu_item_ {
+typedef struct menu_item_ { // create struct
     char name[50];
     double price;
 } menu_item;
@@ -57,7 +57,7 @@ int main() {
         while (running != false) {
             printf("Would you like to sort the menu by price or by name?\n1) By price \n2) By name\n"); // Ask for input
             fgets(&value,MAX_SIZE,stdin);
-            if (sscanf(&value, "%d", &number) == 1 && number <= 2) {
+            if (sscanf(&value, "%d", &number) == 1 && number <= 2 && number >0) {
                 if (number == 1) {
                     // if choice was 1, sort by price
                     qsort(items, row, sizeof(menu_item), sort_price);
@@ -72,20 +72,20 @@ int main() {
             }
         }
         fclose(my_file);
-        for (int i = 0; i < row; i++) {
+        for (int i = 0; i < row; i++) { // print out the list, sorted in the chosen way
             printf("%8.2f %s\n", items[i].price, items[i].name);
         }
     }
     return (0);
 }
 
-int sort_by_name(const void *a, const void *b) {
+int sort_by_name(const void *a, const void *b) { // sorting by name by comparing items in the list
     menu_item ca = *(menu_item *) a;
     menu_item cb = *(menu_item *) b;
     return strcmp(ca.name, cb.name);
 }
 
-int sort_price(const void *a, const void *b) {
+int sort_price(const void *a, const void *b) { // sorting by price by comparing items in the list
     menu_item ca = *(menu_item *) a;
     menu_item cb = *(menu_item *) b;
     double price_a = ca.price;
